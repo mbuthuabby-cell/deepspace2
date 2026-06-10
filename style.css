@@ -1,0 +1,257 @@
+/* General Reset & Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #000c14; /* Deep dark blue/black */
+    color: #dbeaff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0.15em;
+    color: #c0a080; /* Luxurious copper/gold accent */
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Home Page Splash Screen */
+#home {
+    height: 100vh;
+    /* Using the top-down shark image for a moody hero background */
+    background: linear-gradient(rgba(0, 12, 20, 0.6), rgba(0, 12, 20, 0.9)), url('d11890f3014a41f354c22cc24153a9f4.webp') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+#home h1 {
+    font-size: 8em;
+    margin: 0 0 0.2em;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+#home p {
+    max-width: 600px;
+    font-size: 1.3em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.contact-logo {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    color: #c0a080;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.contact-logo:hover {
+    transform: scale(1.15) translateY(-5px);
+    color: #e0c8b0;
+}
+
+/* Gallery Page */
+#gallery {
+    padding: 100px 20px;
+    background: #000a10;
+    text-align: center;
+}
+
+#gallery h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.gallery-grid a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #002b55;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+
+.gallery-grid a:hover {
+    transform: scale(1.03);
+    border-color: #c0a080;
+    box-shadow: 0 15px 40px rgba(192, 160, 128, 0.2);
+    z-index: 10;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the grid uniformly */
+    display: block;
+    aspect-ratio: 4/5; 
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.gallery-grid a:hover img {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* Commissions Page */
+#commissions {
+    padding: 120px 20px;
+    height: auto;
+    /* Using the dark kelp shark image for the commissions background */
+    background: linear-gradient(rgba(0, 12, 20, 0.85), rgba(0, 12, 20, 0.85)), url('0c469233794c4bf3b68a64e7bc11a2a4.webp') fixed center center/cover;
+    text-align: center;
+}
+
+#commissions h2 {
+    font-size: 3em;
+    margin-bottom: 0.8em;
+}
+
+.commission-content {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+/* Values Page */
+#values {
+    padding: 100px 20px;
+    background: #000c14;
+    text-align: center;
+}
+
+#values h2 {
+    font-size: 3em;
+    margin-bottom: 0.8em;
+}
+
+#values p {
+    margin-bottom: 3em;
+}
+
+/* Contact Page */
+#contact {
+    padding: 100px 20px 150px;
+    background: #000a10;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 3em;
+    margin-bottom: 0.8em;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: left;
+}
+
+#contact-form input, #contact-form select {
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #002b55;
+    color: #dbeaff;
+    font-family: inherit;
+    font-size: 1.1em;
+    transition: border-bottom-color 0.3s ease, background-color 0.3s ease;
+}
+
+#contact-form input:focus, #contact-form select:focus {
+    outline: none;
+    border-bottom-color: #c0a080;
+    background-color: rgba(0, 43, 85, 0.1);
+}
+
+#contact-form select {
+    color: rgba(219, 234, 255, 0.7);
+}
+
+#contact-form select:focus, #contact-form select:not(:placeholder-shown) {
+    color: #dbeaff;
+}
+
+#contact-form select option {
+    background-color: #000c14; /* Prevents white dropdowns on some browsers */
+    color: #dbeaff;
+}
+
+#contact-form button {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: #c0a080;
+    border: 1px solid #c0a080;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#contact-form button:hover {
+    background-color: #c0a080;
+    color: #000c14;
+    transform: translateY(-2px);
+}
+
+.email-link {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.8em;
+    margin-top: 30px;
+    color: #c0a080;
+    border-bottom: 1px solid transparent;
+}
+
+.email-link:hover {
+    color: #e0c8b0;
+    border-bottom: 1px solid #e0c8b0;
+}
+
+/* Footer */
+footer {
+    padding: 40px;
+    text-align: center;
+    background-color: #000c14;
+    font-size: 0.9em;
+    color: rgba(219, 234, 255, 0.4);
+    border-top: 1px solid #001f3f;
+}
